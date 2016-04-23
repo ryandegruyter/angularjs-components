@@ -1,0 +1,18 @@
+<div layout="column" ng-if="$ctrl.currencies" layout-align="center center">
+    <h2>{{$ctrl.title}}</h2>
+    <md-content>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Currency</label>
+            <md-select ng-model="$ctrl.ignore">
+                <md-option ng-click="$ctrl.onCurrencyClick(currency)" ng-repeat="currency in $ctrl.currencies" ng-value="currency">
+                    {{$ctrl.showValuesAsRates ? currency.abbreviation + ' ' +  currency.rate : currency.country}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </md-content>
+    <div ng-if="$ctrl.showSelected">
+        <h3 class="md-subhead"><strong>{{$ctrl.selected.rate}}</strong> {{$ctrl.selected.abbreviation}}</h3>
+    </div>
+</div>
+
+<div ng-if="!$ctrl.currencies">No currencies</div>

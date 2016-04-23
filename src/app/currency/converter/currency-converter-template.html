@@ -1,0 +1,41 @@
+<md-card>
+    <div layout="row">
+        <div layout="column" flex="100">
+            <h1 layout="row" layout-align="center">Currency Converter</h1>
+            <div layout="row" layout-align="center center">
+                <md-input-container flex="50" class="md-block" flex-gt-sm>
+                    <label>Amount</label>
+                    <input name="amount"
+                           ng-disabled="!$ctrl.selectedFromCurrency || !$ctrl.selectedToCurrency"
+                           type="number"
+                           ng-change="$ctrl.convert($ctrl.selectedFromCurrency.rate, $ctrl.selectedToCurrency.rate)"
+                           ng-model="$ctrl.amount"/>
+                </md-input-container>
+                <div layout="column" layout-align="center center" flex
+                     ng-if="$ctrl.selectedFromCurrency && $ctrl.selectedToCurrency && $ctrl.result">
+                    <p >{{$ctrl.amount +' '+ $ctrl.selectedFromCurrency.abbreviation}}</p>
+                    <p class="md-headline">=</p>
+                    <p>{{ $ctrl.result +' '+ $ctrl.selectedToCurrency.abbreviation}}</p>
+                </div>
+            </div>
+            <div layout="column" flex>
+                <md-card>
+                    <currencies-select
+                            title="From"
+                            on-selected="$ctrl.fromSelected(selectedCurrency)"
+                            show-values-as-rates="false"
+                            currencies="$ctrl.fromCurrencies"
+                    ></currencies-select>
+                </md-card>
+                <md-card>
+                    <currencies-select
+                            title="To"
+                            on-selected="$ctrl.toSelected(selectedCurrency)"
+                            show-values-as-rates="false"
+                            currencies="$ctrl.toCurrencies"
+                    ></currencies-select>
+                </md-card>
+            </div>
+        </div>
+    </div>
+</md-card>

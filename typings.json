@@ -1,0 +1,14 @@
+{
+  "name": "jworks-registrar",
+  "version": false,
+  "dependencies": {},
+  "ambientDependencies": {
+    "accounting": "registry:dt/accounting#0.3.2+20160316155526",
+    "angular": "registry:dt/angular#1.5.0+20160328125810",
+    "angular-component-router": "registry:dt/angular-component-router#1.5.0+20160328094519",
+    "angular-mocks": "registry:dt/angular-mocks#1.3.0+20160322011350",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160317120654",
+    "jquery": "registry:dt/jquery#1.10.0+20160316155526",
+    "require": "registry:dt/require#2.1.20+20160316155526"
+  }
+}

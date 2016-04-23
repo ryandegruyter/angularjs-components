@@ -1,0 +1,9 @@
+.idea
+node_modules
+typings
+npm-debug.log
+out
+src/**/*.js
+build/
+angularjs-typescript-seed.iml
+
